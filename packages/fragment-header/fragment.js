@@ -5,7 +5,7 @@ const fs = require('fs')
 const server = http.createServer((req, res) => {
   const pathname = url.parse(req.url).pathname
   const jsHeader = { 'Content-Type': 'application/javascript' }
-  switch(pathname) {
+  switch (pathname) {
     case '/public/bundle.js':
       res.writeHead(200, jsHeader)
       return fs.createReadStream('./public/bundle.js').pipe(res)
